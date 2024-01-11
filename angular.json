@@ -103,6 +103,5 @@
         }
       }
     }
-  },
-  "defaultProject": "prediction-tool-ng"
+  }
 }
