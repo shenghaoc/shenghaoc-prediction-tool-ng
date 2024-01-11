@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "prediction-tool-ng:build:production"
+              "buildTarget": "prediction-tool-ng:build:production"
             },
             "development": {
-              "browserTarget": "prediction-tool-ng:build:development"
+              "buildTarget": "prediction-tool-ng:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prediction-tool-ng:build"
+            "buildTarget": "prediction-tool-ng:build"
           }
         },
         "test": {
