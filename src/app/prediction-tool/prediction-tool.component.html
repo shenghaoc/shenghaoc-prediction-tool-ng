@@ -1,0 +1,23 @@
+<form [formGroup]="predictionForm" (ngSubmit)="onSubmit()">
+
+    <label for="ml-model">ML Model: </label>
+    <input id="ml-model" type="text" formControlName="mlModel">
+
+    <label for="town">Town: </label>
+    <input id="town" type="text" formControlName="town">
+
+    <label for="storey-range">Storey Range: </label>
+    <input id="storey-range" type="text" formControlName="storeyRange">
+
+    <label for="flat-model">Flat Model: </label>
+    <input id="flat-model" type="text" formControlName="flatModel">
+
+    <label for="floor-area-sqm">Floor Area: </label>
+    <input id="floor-area-sqm" type="text" formControlName="floorAreaSqm">
+
+    <label for="lease-commence-date">Lease Commence Date: </label>
+    <input id="lease-commence-date" type="text" formControlName="leaseCommenceDate">
+
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!predictionForm.valid">Submit</button>
+</form>
