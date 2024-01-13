@@ -49,8 +49,6 @@
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-
-        <p>Complete the form to enable button.</p>
-        <button type="submit" [disabled]="!predictionForm.valid">Submit</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!predictionForm.valid">Submit</button>
     </form>
 </div>
