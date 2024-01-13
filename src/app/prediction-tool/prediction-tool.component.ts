@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 import { ml_model_list } from '../lists';
 import { town_list } from '../lists';
@@ -15,7 +16,7 @@ import { flat_model_list } from '../lists';
 @Component({
   selector: 'app-prediction-tool',
   standalone: true,
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatToolbarModule, MatSelectModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule],
   templateUrl: './prediction-tool.component.html',
   styleUrl: './prediction-tool.component.css'
 })
