@@ -1,6 +1,10 @@
-div {
-    width: 5rem;
-    height: 5rem;
-    padding: 5px;
-    margin: 10px;
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 200px;
+}
+
+.wrapper>div {
+    flex: 1 1 150px;
 }

@@ -1,60 +1,79 @@
-<p>
-    <mat-toolbar>
-        <span>Prediction Tool</span>
-    </mat-toolbar>
-</p>
+<div class="wrapper">
 
-<div>
     <form [formGroup]="predictionForm" (ngSubmit)="onSubmit()">
 
-        <mat-form-field>
-            <mat-label for="ml-model">ML Model</mat-label>
-            <mat-select id="ml-model" required formControlName="mlModel">
-                @for (ml_model of ml_models; track ml_model) {
-                <mat-option [value]="ml_model">{{ml_model}}</mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
+        <p>
+            <mat-toolbar>
+                <span>Prediction Tool</span>
+            </mat-toolbar>
+        </p>
 
-        <mat-form-field>
-            <mat-label for="town">Town</mat-label>
-            <mat-select id="town" required formControlName="town">
-                @for (town of towns; track town) {
-                <mat-option [value]="town">{{town}}</mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
+        <div>
+            <mat-form-field>
+                <mat-label for="ml-model">ML Model</mat-label>
+                <mat-select id="ml-model" required formControlName="mlModel">
+                    @for (ml_model of ml_models; track ml_model) {
+                    <mat-option [value]="ml_model">{{ml_model}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
 
-        <mat-form-field>
-            <mat-label for="storey-range">Storey Range</mat-label>
-            <mat-select id="storey-range" required formControlName="storeyRange">
-                @for (storey_range of storey_ranges; track storey_range) {
-                <mat-option [value]="storey_range">{{storey_range}}</mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
+        <div>
+            <mat-form-field>
+                <mat-label for="town">Town</mat-label>
+                <mat-select id="town" required formControlName="town">
+                    @for (town of towns; track town) {
+                    <mat-option [value]="town">{{town}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
 
-        <mat-form-field>
-            <mat-label for="flat-model">Flat Model</mat-label>
-            <mat-select id="flat-model" required formControlName="flatModel">
-                @for (flat_model of flat_models; track flat_model) {
-                <mat-option [value]="flat_model">{{flat_model}}</mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
+        <div>
+            <mat-form-field>
+                <mat-label for="storey-range">Storey Range</mat-label>
+                <mat-select id="storey-range" required formControlName="storeyRange">
+                    @for (storey_range of storey_ranges; track storey_range) {
+                    <mat-option [value]="storey_range">{{storey_range}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
 
-        <mat-form-field>
-            <mat-label>Floor Area</mat-label>
-            <input matInput id="floor-area-sqm" type="number" min=0 required formControlName="floorAreaSqm">
-        </mat-form-field>
+        <div>
+            <mat-form-field>
+                <mat-label for="flat-model">Flat Model</mat-label>
+                <mat-select id="flat-model" required formControlName="flatModel">
+                    @for (flat_model of flat_models; track flat_model) {
+                    <mat-option [value]="flat_model">{{flat_model}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
 
-        <mat-form-field>
-            <mat-label>Lease Commence Date</mat-label>
-            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" id="lease-commence-date" required
-                formControlName="leaseCommenceDate">
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <button mat-raised-button color="primary" type="submit" [disabled]="!predictionForm.valid">Submit</button>
+        <div>
+            <mat-form-field>
+                <mat-label>Floor Area</mat-label>
+                <input matInput id="floor-area-sqm" type="number" min=0 required formControlName="floorAreaSqm">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Lease Commence Date</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" id="lease-commence-date"
+                    required formControlName="leaseCommenceDate">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!predictionForm.valid">Submit</button>
+        </div>
     </form>
+    @if (isBrowser) {
+    <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="'bar'"> </canvas>
+    }
 </div>
